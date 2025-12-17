@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from PIL import Image
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
@@ -106,19 +107,6 @@ for feature in features:
             format="%.2f"
         )
 
-        # Tombol Prediksi
-if st.sidebar.button("Species Bunga Iris"):
-    # 1. Konversi input ke DataFrame
-    new_data = pd.DataFrame([input_data])
-    
-    # 2. Scaling data input
-    new_data_scaled = scaler.transform(new_data)
-    
-    # 3. Prediksi
-    prediction = model.predict(new_data_scaled)[0]
-    
-    # 4. Tampilkan Hasil
-    st.sidebar.success(f"Species: **{prediction.upper()}**")
     
   # --- MAIN PAGE CONTENT ---
 
@@ -289,5 +277,4 @@ with tab4:
     ---
     
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
-
     """)
