@@ -118,12 +118,12 @@ images = [
 ]
 
 def get_iris_image(species):
-    image_map = {
-        "Iris-setosa": "images/iris-setosa.jpg",
-        "Iris-versicolor": "images/iris-versicolor.jpg",
-        "Iris-virginica": "images/iris-virginica.jpg"
+    image_urls = {
+    "Iris-setosa": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg",
+    "Iris-versicolor": "https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg",
+    "Iris-virginica": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Iris_virginica.jpg"
     }
-    return image_map.get(species, None)
+    return image_urls.get(species, None)
 
         # Tombol Prediksi
 if st.sidebar.button("Species Bunga Iris"):
@@ -278,4 +278,5 @@ with tab4:
     ---
     
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
+
     """)
