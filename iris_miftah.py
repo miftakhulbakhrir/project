@@ -128,6 +128,54 @@ Selamat Mengeksplorasi Keanekaragaman Species Bunga Iris.
 """)
 st.markdown("Aplikasi ini menggunakan model *Machine Learning* **Random Forest** untuk memprediksi **Species Bunga Iris** berdasarkan ukuran kelopak dan mahkota bunga")
 
+images = [
+    "iris-setosa.jpg",
+    "iris-versicolor.jpg",
+    "iris-virginica.jpg"
+]
+
+def get_iris_image(species):
+    image_map = {
+        "Iris-setosa": "images/iris-setosa.jpg",
+        "Iris-versicolor": "images/iris-versicolor.jpg",
+        "Iris-virginica": "images/iris-virginica.jpg"
+    }
+    return image_map.get(species, None)
+
+        # Tombol Prediksi
+if st.sidebar.button("Species Bunga Iris"):
+    # 1. Konversi input ke DataFrame
+    new_data = pd.DataFrame([input_data])
+    
+    # 2. Scaling data input
+    new_data_scaled = scaler.transform(new_data)
+    
+    # Prediksi
+    prediction = model.predict(new_data_scaled)[0]
+
+    # Ambil gambar
+    image_path = get_iris_image(prediction)
+
+    # TAMPILAN TENGAH HALAMAN
+    st.markdown("---")
+    st.markdown(
+        "<h2 style='text-align: center;'> Hasil Prediksi Species Bunga Iris </h2>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        f"<h1 style='text-align: center; color: #2E8B57;'>{prediction.upper()}</h1>",
+        unsafe_allow_html=True
+    )
+
+    # Tampilkan gambar di tengah
+    if image_path:
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.image(image_path, caption=prediction, use_container_width=True)
+
+    st.success("Prediksi berhasil berdasarkan ukuran kelopak dan mahkota bunga.")
+
 tab1, tab2, tab3, tab4 = st.tabs(["Dataset Overview", "Analisis Data Eksploratif (EDA)", "Pemodelan & Evaluasi", "About Project"])
 
 # ----------------------------------------------------
@@ -241,4 +289,5 @@ with tab4:
     ---
     
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
+
     """)
