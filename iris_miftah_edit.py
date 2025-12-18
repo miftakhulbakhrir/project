@@ -166,6 +166,12 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.image(
+    "assets/iris_ml_banner.png",
+    caption="Prediksi Spesies Bunga Iris dengan Machine Learning",
+    use_container_width=True
+)
+
 st.markdown(
     """
     <p style='text-align: center; font-size:18px;'>
@@ -302,6 +308,7 @@ with tab4:
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
 
     """)
+
 
 
 
