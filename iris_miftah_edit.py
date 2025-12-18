@@ -157,7 +157,15 @@ if st.sidebar.button("Species Bunga Iris"):
     
     st.success("Prediksi berhasil berdasarkan ukuran kelopak dan mahkota bunga.")
     
-st.title("Aplikasi Prediksi Species Bunga Iris")
+st.markdown(
+    """
+    <h1 style='text-align: center;'>
+        APLIKASI PREDIKSI SPECIES BUNGA IRIS
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+
 st.write("""
 Selamat Mengeksplorasi Keanekaragaman Species Bunga Iris.
 """)
@@ -280,4 +288,5 @@ with tab4:
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
 
     """)
+
 
