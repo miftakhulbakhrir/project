@@ -145,16 +145,16 @@ if st.sidebar.button("Species Bunga Iris"):
         "<h2 style='text-align: center;'> Hasil Prediksi Species Bunga Iris </h2>",
         unsafe_allow_html=True
     )
-    st.markdown(
-        f"<h1 style='text-align: center; color: #2E8B57;'>{prediction.upper()}</h1>",
-        unsafe_allow_html=True
-    )
     # Tampilkan gambar di tengah
     if image_path:
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             st.image(image_path, use_container_width=True)
-
+    st.markdown(
+        f"<h1 style='text-align: center; color: #2E8B57;'>{prediction.upper()}</h1>",
+        unsafe_allow_html=True
+    )
+    
     st.success("Prediksi berhasil berdasarkan ukuran kelopak dan mahkota bunga.")
     
 st.title("Aplikasi Prediksi Species Bunga Iris")
@@ -280,3 +280,4 @@ with tab4:
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
 
     """)
+
