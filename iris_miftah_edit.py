@@ -280,8 +280,8 @@ with tab3:
     fig, ax = plt.subplots(figsize=(10, 5))
     sns.barplot(x=rf_importances, y=rf_importances.index, palette='rocket', ax=ax)
     ax.set_title('Kepentingan Fitur (Random Forest)')
-    ax.xlabel('Skor Kepentingan')
-    ax.ylabel('Fitur')
+    plt.xlabel('Skor Kepentingan')
+    plt.ylabel('Fitur')
     st.pyplot(fig)
     
     st.success("Petal Length (cm) dan Petal Width (cm) terbukti menjadi faktor paling penting dalam proses pengambilan keputusan model.")
@@ -310,6 +310,7 @@ with tab4:
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
 
     """)
+
 
 
 
