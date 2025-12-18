@@ -166,11 +166,25 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.write("""
-Selamat Mengeksplorasi Keanekaragaman Species Bunga Iris.
-""")
-st.markdown("Aplikasi ini menggunakan model *Machine Learning* **Random Forest** untuk memprediksi **Species Bunga Iris** berdasarkan ukuran kelopak dan mahkota bunga")
+st.markdown(
+    """
+    <p style='text-align: center; font-size:18px;'>
+        Selamat Mengeksplorasi Keanekaragaman Species Bunga Iris.
+    </p>
+    """,
+    unsafe_allow_html=True
+)
 
+st.markdown(
+    """
+    <p style='text-align: center;'>
+        Aplikasi ini menggunakan model <b>Machine Learning</b>
+        <b>Random Forest</b> untuk memprediksi
+        <b>Species Bunga Iris</b> berdasarkan ukuran kelopak dan mahkota bunga.
+    </p>
+    """,
+    unsafe_allow_html=True
+)
 
 
 tab1, tab2, tab3, tab4 = st.tabs(["Dataset Overview", "Analisis Data Eksploratif (EDA)", "Pemodelan & Evaluasi", "About Project"])
@@ -288,5 +302,6 @@ with tab4:
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
 
     """)
+
 
 
